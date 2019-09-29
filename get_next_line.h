@@ -15,8 +15,15 @@
 
 # include <stdlib.h>
 
-# 
+# define MAX_OPEN_FILES 1024
 # define BUFF_SIZE 32
+
+typedef struct	s_unread_buff
+{
+	char		*buff_copy;
+	int			pos;
+	int			bytes_in_buff;
+}				t_unread_buff;
 
 int	get_next_line(const int fd, char **line);
 
