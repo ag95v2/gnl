@@ -6,7 +6,7 @@
 /*   By: bgian <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/21 18:42:53 by bgian             #+#    #+#             */
-/*   Updated: 2019/09/23 19:00:14 by bgian            ###   ########.fr       */
+/*   Updated: 2019/10/01 00:24:17 by bgian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,9 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+
+void				*ft_memdup(void *c, size_t n);
+t_list				*ft_lstappend(t_list *lst, void, void const *content,\
+		size_t content_size)
 
 #endif

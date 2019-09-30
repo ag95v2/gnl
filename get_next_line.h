@@ -6,7 +6,7 @@
 /*   By: bgian <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 20:18:19 by bgian             #+#    #+#             */
-/*   Updated: 2019/09/27 21:24:58 by bgian            ###   ########.fr       */
+/*   Updated: 2019/09/30 23:38:18 by bgian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 typedef struct	s_unread_buff
 {
-	char		*buff_copy;
+	char		*data;
 	int			pos;
 	int			bytes_in_buff;
 }				t_unread_buff;

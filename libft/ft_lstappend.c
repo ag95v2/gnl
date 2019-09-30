@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstappend.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgian <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/21 18:35:58 by bgian             #+#    #+#             */
-/*   Updated: 2019/09/30 23:17:24 by bgian            ###   ########.fr       */
+/*   Created: 2019/10/01 00:12:21 by bgian             #+#    #+#             */
+/*   Updated: 2019/10/01 00:23:03 by bgian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+/*
+** Create new list if needed. 
+** Append to the end a new element
+** Return pointer to start
+*/
+t_list	*ft_lstappend(t_list *lst, void, void const *content,\
+	   	size_t content_size)
 {
-	char	*tmp;
+	t_list	*new;
+	t_list	*tmp;
 
-	tmp = (char *)malloc(sizeof(char) * n);
-	ft_memcpy(tmp, src, n);
-	ft_memcpy(dest, tmp, n);
-	free(tmp);
-	return (dest);
+	if (!(new = ft_lstnew(content, content_size)))
+		return (0);
+	if (!lst)
+		return (new);
+	tmp = lst;
+	while (lst->next)
+		lst = lst->next;
+	lst->next = new;
+	return (tmp);
 }

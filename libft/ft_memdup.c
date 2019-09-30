@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgian <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/21 18:35:58 by bgian             #+#    #+#             */
-/*   Updated: 2019/09/30 23:17:24 by bgian            ###   ########.fr       */
+/*   Created: 2019/09/30 23:17:33 by bgian             #+#    #+#             */
+/*   Updated: 2019/10/01 00:03:23 by bgian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*
+** Similar to strdup, but ignores '\0' 
+** Protected from malloc(0) and any kind of invalid input
+*/
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memdup(void *c, size_t n)
 {
-	char	*tmp;
+	void	*dest;
 
-	tmp = (char *)malloc(sizeof(char) * n);
-	ft_memcpy(tmp, src, n);
-	ft_memcpy(dest, tmp, n);
-	free(tmp);
+	if (!c || !n)
+		return(0);
+	if (dest = (void *)malloc(n))
+		ft_memcpy(dest, c, n);
 	return (dest);
 }
