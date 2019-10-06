@@ -93,7 +93,7 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 void				*ft_memdup(void *c, size_t n);
-t_list				*ft_lstappend(t_list *lst, void, void const *content,\
-		size_t content_size)
+t_list				*ft_lstappend(t_list *lst, void const *content,\
+		size_t content_size);
 
 #endif

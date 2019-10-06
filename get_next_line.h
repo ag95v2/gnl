@@ -13,6 +13,7 @@
 #ifndef	GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
+# include "libft.h"
 # include <stdlib.h>
 
 # define MAX_OPEN_FILES 1024
@@ -25,6 +26,6 @@ typedef struct	s_unread_buff
 	int			bytes_in_buff;
 }				t_unread_buff;
 
-int	get_next_line(const int fd, char **line);
+int		get_next_line(const int fd, char **line);
 
 #endif

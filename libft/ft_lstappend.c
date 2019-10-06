@@ -17,13 +17,13 @@
 ** Append to the end a new element
 ** Return pointer to start
 */
-t_list	*ft_lstappend(t_list *lst, void, void const *content,\
-	   	size_t content_size)
+
+t_list	*ft_lstappend(t_list *lst, void const *content, size_t content_size)
 {
 	t_list	*new;
 	t_list	*tmp;
 
-	if (!(new = ft_lstnew(content, content_size)))
+	if (!content_size || !content || !(new = ft_lstnew(content, content_size)))
 		return (0);
 	if (!lst)
 		return (new);

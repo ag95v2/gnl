@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "get_next_line.h"
+#include "libft.h"
 
 static t_unread_buff	*new_buf(void)
 {
@@ -42,27 +42,64 @@ static t_unread_buff	*new_buf(void)
 */
 
 /* TODO: CHECK ALL BOUNDARY CONDITIONS */
-static size_t			seek_nl(t_unread_buff *buff, int fd, t_list *l)
+size_t			seek_nl(t_unread_buff **buff, int fd, t_list **l)
 {
 	size_t	len;
 	int		pos;
 	
-	pos = buff->pos;
-	while (pos < buff->bytes_in_buff && buff->data[pos] == '\n')
+	if (!*buff)
+		*buff = new_buf();
+	pos = (*buff)->pos;
+	while (pos < (*buff)->bytes_in_buff && (*buff)->data[pos] != '\n')
 		pos++;
 
-	len = pos - buff->pos;
-	l = ft_lstappend(l, ft_memdup(buff->data[buff->pos], len), len);
-	return ((buff->pos = pos) == buff->bytes_read ?\
-			buff->pos = 0, buff->bytes_read = read(fd, buff->data, BUFF_SIZE),\
-			len + seek_nl(buff, fd, l) : len);
+	len = pos - (*buff)->pos;
+	*l = ft_lstappend(*l, ft_memdup((*buff)->data + (*buff)->pos, len), len);
+
+	if (((*buff)->pos = pos) >= (*buff)->bytes_in_buff)
+	{
+		(*buff)->pos = 0;
+		(*buff)->bytes_in_buff = read(fd, (*buff)->data, BUFF_SIZE);
+		return (len + seek_nl(buff, fd, l));
+	}
+	(*buff)->pos++;
+	return (len);
+	/*
+	return (((*buff)->pos = pos) >= (*buff)->bytes_in_buff ?\
+			(*buff)->pos = 0, (*buff)->bytes_in_buff = read(fd, (*buff)->data, BUFF_SIZE),\
+			len + seek_nl(buff, fd, l)\
+			:(*buff)->pos++, len);
+	*/
+}
+
+// Yet only concat
+char	*concat_and_free(t_list *l, int total_len)
+{
+	char	*c;
+	size_t	i;
+
+	i = 0;
+	c = (char *)malloc(total_len + 1);
+	if (!c)
+		return (0);
+	while (l)
+	{
+		ft_memcpy(c + i, (const void *)l->content, l->content_size);
+		i += l->content_size;
+		l = l->next;
+	}
+	c[i] = 0;
+	return (c);
 }
 
 int						get_next_line(const int fd, char **line)
 {
-	static t_unread_buff	bufs[MAX_OPEN_FILES + 3];
-	int						ret;
+	static t_unread_buff	*bufs[MAX_OPEN_FILES + 3];
+	int						len;
+	t_list					*l;
 
-	ret = !bufs[fd] && !(bufs[fd] = new_buf()) ? -1 : filline(bufs, fd, line);
-	return (ret);
+	l = NULL;
+	len = seek_nl(&bufs[fd], fd, &l);
+	*line = concat_and_free(l, len);
+	return (len);
 }

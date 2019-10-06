@@ -15,13 +15,15 @@
 ** Protected from malloc(0) and any kind of invalid input
 */
 
+#include "libft.h"
+
 void	*ft_memdup(void *c, size_t n)
 {
 	void	*dest;
 
 	if (!c || !n)
 		return(0);
-	if (dest = (void *)malloc(n))
+	if ((dest = (void *)malloc(n)))
 		ft_memcpy(dest, c, n);
 	return (dest);
 }
