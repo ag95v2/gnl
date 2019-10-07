@@ -2,6 +2,7 @@
 #include "get_next_line.h"
 #include <fcntl.h>
 #include <stdio.h>
+#include <string.h>
 
 #define DEFAULT_NLINES 3 
 
@@ -21,8 +22,8 @@ int main(int argc, char **argv)
 	{
 		len =  get_next_line(fd, &s);
 		//printf("Line number %d contains %d bytes\n", i, len);
-
-		printf("%s\n", s);
+		if (strlen(s))
+			printf("%s\n", s);
 	}
 	return (0);
 }

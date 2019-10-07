@@ -60,16 +60,12 @@ size_t			seek_nl(t_unread_buff **buff, int fd, t_list **l)
 	{
 		(*buff)->pos = 0;
 		(*buff)->bytes_in_buff = read(fd, (*buff)->data, BUFF_SIZE);
-		return (len + seek_nl(buff, fd, l));
+		if ((*buff)->bytes_in_buff)
+			return (len + seek_nl(buff, fd, l));
+		return (len);
 	}
 	(*buff)->pos++;
 	return (len);
-	/*
-	return (((*buff)->pos = pos) >= (*buff)->bytes_in_buff ?\
-			(*buff)->pos = 0, (*buff)->bytes_in_buff = read(fd, (*buff)->data, BUFF_SIZE),\
-			len + seek_nl(buff, fd, l)\
-			:(*buff)->pos++, len);
-	*/
 }
 
 // Yet only concat

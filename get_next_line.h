@@ -17,7 +17,7 @@
 # include <stdlib.h>
 
 # define MAX_OPEN_FILES 1024
-# define BUFF_SIZE 32
+# define BUFF_SIZE 10
 
 typedef struct	s_unread_buff
 {
