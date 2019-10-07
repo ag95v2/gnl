@@ -24,6 +24,7 @@ typedef struct	s_unread_buff
 	char		*data;
 	int			pos;
 	int			bytes_in_buff;
+	int			eof;
 }				t_unread_buff;
 
 int		get_next_line(const int fd, char **line);

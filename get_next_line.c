@@ -28,24 +28,25 @@ static t_unread_buff	*new_buf(void)
 	}
 	buffer->pos = 0;
 	buffer->bytes_in_buff = 0;
+	buffer->eof = 0;
 	return (buffer);
 }
 
 // Yet only concat
-static char	*concat_and_free(t_list *l, int total_len)
+static char	*concat_and_free(t_list **l, int total_len)
 {
 	char	*c;
 	size_t	i;
-
+	
 	i = 0;
 	c = (char *)malloc(total_len + 1);
 	if (!c)
 		return (0);
-	while (l)
+	while (*l)
 	{
-		ft_memcpy(c + i, (const void *)l->content, l->content_size);
-		i += l->content_size;
-		l = l->next;
+		ft_memcpy(c + i, (const void *)(*l)->content, (*l)->content_size);
+		i += (*l)->content_size;
+		ft_lstdelone(l, &del_simple);
 	}
 	c[i] = 0;
 	return (c);
@@ -64,22 +65,23 @@ static int	seek_nl(t_unread_buff *buff, int fd, t_list **l)
 	int	total;
 
 	total = 0;
-	while (1)
+	while (!buff->eof)
 	{
 		len = 0;
 		while (buff->pos + len < buff->bytes_in_buff && buff->data[buff->pos + len] != '\n')
 			len++;
 		*l = ft_lstappend(*l, ft_memdup(buff->data + buff->pos, len), len);
-		
 		total += len;
-		if ((buff->pos += len + 1) >= buff->bytes_in_buff &&\
-				(buff->bytes_in_buff = read(fd, buff->data, BUFF_SIZE)))
+		if ((buff->pos += len + 1) >= buff->bytes_in_buff)
 		{
+			if (!(buff->bytes_in_buff = read(fd, buff->data, BUFF_SIZE)))
+				buff->eof = 1;
 			buff->pos = 0;
 			continue;
 		}
 		return (total);
 	}
+	return (total);
 }
 
 int						get_next_line(const int fd, char **line)
@@ -87,11 +89,17 @@ int						get_next_line(const int fd, char **line)
 	static t_unread_buff	*bufs[MAX_OPEN_FILES + 3];
 	int						len;
 	t_list					*l;
+	int						any_errors;
 
+	any_errors = 0;
 	l = NULL;
 	if (!bufs[fd])
 		bufs[fd] = new_buf();
+	if (bufs[fd]->eof == 1)
+		return (0);
 	len = seek_nl(bufs[fd], fd, &l);
-	*line = concat_and_free(l, len);
-	return (len);
+	*line = concat_and_free(&l, len);
+	if (any_errors)
+		return (-1);
+	return (1);
 }

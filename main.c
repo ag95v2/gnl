@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#define DEFAULT_NLINES 3 
+#define DEFAULT_NLINES 100 
 
 int main(int argc, char **argv)
 {
@@ -12,18 +12,21 @@ int main(int argc, char **argv)
 	int		i;
 	int		nlines;
 	int		fd;
-	int		len;
+	int		ret;
 
 	fd = open("input.txt", O_RDONLY);
 	nlines = argc > 1 ? ft_atoi(argv[1]) : DEFAULT_NLINES;
 	
 	i = 0;
-	while (i++ < nlines)
+	ret = 1;
+	while (i++ < nlines && ret > 0)
 	{
-		len =  get_next_line(fd, &s);
-		//printf("Line number %d contains %d bytes\n", i, len);
-		if (strlen(s))
+		if ((ret = get_next_line(fd, &s)) > 0)
+		{
 			printf("%s\n", s);
+			free(s);
+		}
 	}
+	close(fd);
 	return (0);
 }

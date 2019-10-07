@@ -12,7 +12,7 @@ ft_isprint.c	ft_memchr.c	ft_putnbr.c	ft_strdup.c	ft_strncmp.c	ft_tolower.c\
 ft_itoa.c	ft_memcmp.c	ft_putnbr_fd.c	ft_strequ.c	ft_strncpy.c	ft_toupper.c\
 ft_lstadd.c	ft_memcpy.c	ft_putstr.c	ft_striter.c	ft_strnequ.c\
 ft_lstdel.c	ft_memdel.c	ft_putstr_fd.c	ft_striteri.c	ft_strnew.c ft_memdup.c\
-ft_lstappend.c
+ft_lstappend.c ft_del.c
 
 endef
 
