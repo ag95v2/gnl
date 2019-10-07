@@ -31,45 +31,8 @@ static t_unread_buff	*new_buf(void)
 	return (buffer);
 }
 
-/*
-** 1) While there is any unread data in buff, read from buf.
-** Update the state of buf.
-** 2) If no '\n' found in buffer, read BINARY DATA from fd by chunks until 
-** '\n' (or EOF).
-** Store chunks in linked list l.
-** Return their total length.
-** Last chunk is always stored in "unread buffer" buff.
-*/
-
-/* TODO: CHECK ALL BOUNDARY CONDITIONS */
-size_t			seek_nl(t_unread_buff **buff, int fd, t_list **l)
-{
-	size_t	len;
-	int		pos;
-	
-	if (!*buff)
-		*buff = new_buf();
-	pos = (*buff)->pos;
-	while (pos < (*buff)->bytes_in_buff && (*buff)->data[pos] != '\n')
-		pos++;
-
-	len = pos - (*buff)->pos;
-	*l = ft_lstappend(*l, ft_memdup((*buff)->data + (*buff)->pos, len), len);
-
-	if (((*buff)->pos = pos) >= (*buff)->bytes_in_buff)
-	{
-		(*buff)->pos = 0;
-		(*buff)->bytes_in_buff = read(fd, (*buff)->data, BUFF_SIZE);
-		if ((*buff)->bytes_in_buff)
-			return (len + seek_nl(buff, fd, l));
-		return (len);
-	}
-	(*buff)->pos++;
-	return (len);
-}
-
 // Yet only concat
-char	*concat_and_free(t_list *l, int total_len)
+static char	*concat_and_free(t_list *l, int total_len)
 {
 	char	*c;
 	size_t	i;
@@ -88,6 +51,37 @@ char	*concat_and_free(t_list *l, int total_len)
 	return (c);
 }
 
+/*
+   Search for unread line in buffer. 
+   If nothing useful found - read from fd.
+   Store the result in l. Return length of string.
+
+   Valid buffer is assumed. *l will be modified.
+*/
+static int	seek_nl(t_unread_buff *buff, int fd, t_list **l)
+{
+	int	len;
+	int	total;
+
+	total = 0;
+	while (1)
+	{
+		len = 0;
+		while (buff->pos + len < buff->bytes_in_buff && buff->data[buff->pos + len] != '\n')
+			len++;
+		*l = ft_lstappend(*l, ft_memdup(buff->data + buff->pos, len), len);
+		
+		total += len;
+		if ((buff->pos += len + 1) >= buff->bytes_in_buff &&\
+				(buff->bytes_in_buff = read(fd, buff->data, BUFF_SIZE)))
+		{
+			buff->pos = 0;
+			continue;
+		}
+		return (total);
+	}
+}
+
 int						get_next_line(const int fd, char **line)
 {
 	static t_unread_buff	*bufs[MAX_OPEN_FILES + 3];
@@ -95,7 +89,9 @@ int						get_next_line(const int fd, char **line)
 	t_list					*l;
 
 	l = NULL;
-	len = seek_nl(&bufs[fd], fd, &l);
+	if (!bufs[fd])
+		bufs[fd] = new_buf();
+	len = seek_nl(bufs[fd], fd, &l);
 	*line = concat_and_free(l, len);
 	return (len);
 }
