@@ -16,6 +16,8 @@ static t_list	*del_get_next(t_list *l, void (*del)(void *, size_t))
 {
 	t_list	*next;
 
+	if (!l)
+		return (0);
 	next = l->next;
 	ft_lstdelone(&l, del);
 	return (next);

@@ -15,6 +15,7 @@
 
 # include "libft.h"
 # include <stdlib.h>
+# include <errno.h>
 
 # define MAX_OPEN_FILES 1024
 # define BUFF_SIZE 1000
@@ -23,8 +24,10 @@ typedef struct	s_unread_buff
 {
 	char		*data;
 	int			pos;
-	int			bytes_in_buff;
+	int			nbytes;
 	int			eof;
+	int			io_err;
+	int			nl_found;
 }				t_unread_buff;
 
 int		get_next_line(const int fd, char **line);

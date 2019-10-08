@@ -27,12 +27,13 @@ static t_unread_buff	*new_buf(void)
 		return (0);
 	}
 	buffer->pos = 0;
-	buffer->bytes_in_buff = 0;
+	buffer->nbytes = 0;
 	buffer->eof = 0;
+	buffer->io_err = 0;
+	buffer->nl_found = 0;
 	return (buffer);
 }
 
-// Yet only concat
 static char	*concat_and_free(t_list **l, int total_len)
 {
 	char	*c;
@@ -41,7 +42,10 @@ static char	*concat_and_free(t_list **l, int total_len)
 	i = 0;
 	c = (char *)malloc(total_len + 1);
 	if (!c)
+	{
+		ft_lstdel(l, &del_simple);
 		return (0);
+	}
 	while (*l)
 	{
 		ft_memcpy(c + i, (const void *)(*l)->content, (*l)->content_size);
@@ -52,54 +56,99 @@ static char	*concat_and_free(t_list **l, int total_len)
 	return (c);
 }
 
-/*
-   Search for unread line in buffer. 
-   If nothing useful found - read from fd.
-   Store the result in l. Return length of string.
-
-   Valid buffer is assumed. *l will be modified.
-*/
-static int	seek_nl(t_unread_buff *buff, int fd, t_list **l)
+/*****************************************************************************
+**		Append contents of buffer from pos to '\n' into list *l
+**		Return number of bytes (len) extracted from buffer. Skip newline.
+**		Update the current position of buffer to (len + 1) bytes
+**		Update nl_found field if found '\n'
+**
+**		position can become > bytes_in_buff
+*****************************************************************************/
+static int	try_buffer(t_unread_buff *buff, t_list **l)
 {
 	int	len;
-	int	total;
 
-	total = 0;
-	while (!buff->eof)
+	len = 0;
+	buff->nl_found = 0;
+	while (buff->pos + len < buff->nbytes)
 	{
-		len = 0;
-		while (buff->pos + len < buff->bytes_in_buff && buff->data[buff->pos + len] != '\n')
-			len++;
-		*l = ft_lstappend(*l, ft_memdup(buff->data + buff->pos, len), len);
-		total += len;
-		if ((buff->pos += len + 1) >= buff->bytes_in_buff)
+		if (buff->data[buff->pos + len] == '\n')
 		{
-			if (!(buff->bytes_in_buff = read(fd, buff->data, BUFF_SIZE)))
-				buff->eof = 1;
-			buff->pos = 0;
-			continue;
+			buff->nl_found = 1;
+			break;
 		}
-		return (total);
+		len++;
 	}
-	return (total);
+	*l = ft_lstappend(*l, ft_memdup(buff->data + buff->pos, len), len);
+	buff->pos += len + 1;
+	return (len);
 }
 
+/*****************************************************************************
+**		First of all, try to read from buffer. 
+**		If nothing interesting left in buffer, read from file.
+**		If nothing interesting left in file, stop and update EOF-bit
+*****************************************************************************/
+static int	seek_nl(t_unread_buff *buff, int fd, t_list **l)
+{
+	int	total_len;
+
+	total_len = 0;
+	while (!buff->eof)
+	{
+		total_len += try_buffer(buff, l);
+		if (buff->pos >= buff->nbytes && !buff->nl_found)
+		{
+			buff->nbytes = read(fd, buff->data, BUFF_SIZE);
+			buff->pos = 0;
+			if (buff->nbytes == 0)
+				buff->eof = 1;
+			if (buff->nbytes == -1)
+			{
+				ft_lstdel(l, &del_simple);
+				return (0);
+			}
+			continue;
+		}
+		return (total_len);
+	}
+	return (total_len);
+}
+
+/******************************************************************************
+**		Caller should not store anything useful in *line.
+**		EOF handling detatils:
+**		When we return 0, *line is set to NULL 
+**		If EOF reached and there is still any data in buffer, reading is 
+**		not considered as finished, 0 is not returned.
+**		If any data is appended to file after EOF, we can read it.
+**		
+**		Other details:
+**		1)*line IS freed and set to NULL in case of ANY errors
+**		Absence of double free is guaranteed by function concat_and_free
+**		2)l is ALWAYS freed in concat_and_free. 
+**		Absence of double free is guaranteed by function ft_lstdel
+******************************************************************************/
 int						get_next_line(const int fd, char **line)
 {
 	static t_unread_buff	*bufs[MAX_OPEN_FILES + 3];
 	int						len;
 	t_list					*l;
-	int						any_errors;
-
-	any_errors = 0;
+	
+	errno = 0;
 	l = NULL;
 	if (!bufs[fd])
 		bufs[fd] = new_buf();
-	if (bufs[fd]->eof == 1)
-		return (0);
+	if (!bufs[fd])
+		return (-1);
+	bufs[fd]->eof = 0;
 	len = seek_nl(bufs[fd], fd, &l);
 	*line = concat_and_free(&l, len);
-	if (any_errors)
-		return (-1);
+	if (errno || bufs[fd]->eof == 1)
+	{
+		free(*line);
+		*line = 0;
+		return (errno ? -1 : 0);
+	}
 	return (1);
 }
