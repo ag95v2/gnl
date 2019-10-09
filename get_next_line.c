@@ -6,7 +6,7 @@
 /*   By: bgian <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 20:20:24 by bgian             #+#    #+#             */
-/*   Updated: 2019/10/09 16:03:53 by bgian            ###   ########.fr       */
+/*   Updated: 2019/10/09 18:52:15 by bgian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ static t_unread_buff	*new_buf(void)
 	return (buffer);
 }
 
-static char	*concat_and_free(t_list **l, unsigned int total_len)
+static char				*concat_and_free(t_list **l, unsigned int total_len)
 {
 	char	*c;
 	size_t	i;
-	
+
 	i = 0;
 	c = 0;
 	if (total_len + 1)
@@ -59,15 +59,16 @@ static char	*concat_and_free(t_list **l, unsigned int total_len)
 	return (c);
 }
 
-/*****************************************************************************
+/*
 **		Append contents of buffer from pos to '\n' into list *l
 **		Return number of bytes (len) extracted from buffer. Skip newline.
 **		Update the current position of buffer to (len + 1) bytes
 **		Update nl_found field if found '\n'
 **
 **		position can become > bytes_in_buff
-*****************************************************************************/
-static size_t	try_buffer(t_unread_buff *buff, t_list **l)
+*/
+
+static size_t			try_buffer(t_unread_buff *buff, t_list **l)
 {
 	size_t	len;
 
@@ -78,7 +79,7 @@ static size_t	try_buffer(t_unread_buff *buff, t_list **l)
 		if (buff->data[buff->pos + len] == '\n')
 		{
 			buff->nl_found = 1;
-			break;
+			break ;
 		}
 		len++;
 	}
@@ -87,69 +88,61 @@ static size_t	try_buffer(t_unread_buff *buff, t_list **l)
 	return (len);
 }
 
-/*****************************************************************************
-**		First of all, try to read from buffer. 
+/*
+**		First of all, try to read from buffer.
 **		If nothing interesting left in buffer, read from file.
 **		If nothing interesting left in file, stop and update EOF-bit
-*****************************************************************************/
-static int	seek_nl(t_unread_buff *buff, int fd, t_list **l)
+*/
+
+static int				seek_nl(t_unread_buff *buff, int fd, t_list **l)
 {
 	size_t	total_len;
-	size_t	prev_total_len;
+	size_t	prev;
 
 	total_len = 0;
-	while (!buff->eof)
+	while (1)
 	{
-		prev_total_len = total_len;
-		total_len += try_buffer(buff, l);
-		if (prev_total_len > total_len)
-		{
-			ft_lstdel(l, &del_simple);
-			errno =  EOVERFLOW;
-			return (0);
-		}
-		if (buff->pos >= buff->nbytes && !buff->nl_found)
+		prev = total_len;
+		errno = (total_len += try_buffer(buff, l)) < prev ? EOVERFLOW : errno;
+		if (!buff->nl_found)
 		{
 			buff->nbytes = read(fd, buff->data, BUFF_SIZE);
 			buff->pos = 0;
 			if (buff->nbytes == -1)
-			{
-				ft_lstdel(l, &del_simple);
 				return (0);
-			}
 			if (buff->nbytes == 0)
 			{
 				if (total_len == 0)
 					buff->eof = 1;
-				break;
+				return (total_len);
 			}
 			continue;
 		}
 		return (total_len);
 	}
-	return (total_len);
 }
 
-/******************************************************************************
+/*
 **		Caller should not store anything useful in *line.
 **		EOF handling detatils:
-**		When we return 0, *line is set to NULL 
-**		If EOF reached and there is still any data in buffer, reading is 
+**		When we return 0, *line is set to NULL
+**		If EOF reached and there is still any data in buffer, reading is
 **		not considered as finished, 0 is not returned.
 **		If any data is appended to file after EOF, we can read it.
-**		
+**
 **		Other details:
 **		1)*line IS freed and set to NULL in case of ANY errors
 **		Absence of double free is guaranteed by function concat_and_free
-**		2)l is ALWAYS freed in concat_and_free. 
+**		2)l is ALWAYS freed in concat_and_free.
 **		Absence of double free is guaranteed by function ft_lstdel
-******************************************************************************/
+*/
+
 int						get_next_line(const int fd, char **line)
 {
 	static t_unread_buff	*bufs[MAX_OPEN_FILES + 3];
 	unsigned int			len;
 	t_list					*l;
-	
+
 	errno = 0;
 	l = NULL;
 	if (!bufs[fd])

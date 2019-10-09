@@ -6,14 +6,14 @@
 /*   By: bgian <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 00:12:21 by bgian             #+#    #+#             */
-/*   Updated: 2019/10/01 00:23:03 by bgian            ###   ########.fr       */
+/*   Updated: 2019/10/09 18:36:04 by bgian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Create new list if needed. 
+** Create new list if needed.
 ** Append to the end a new element
 ** Return pointer to start
 */
