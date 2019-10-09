@@ -18,7 +18,7 @@
 # include <errno.h>
 
 # define MAX_OPEN_FILES 1024
-# define BUFF_SIZE 1000
+# define BUFF_SIZE 1000000
 
 typedef struct	s_unread_buff
 {

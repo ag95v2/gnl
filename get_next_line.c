@@ -12,6 +12,7 @@
 
 #include "get_next_line.h"
 #include "libft.h"
+#include <errno.h>
 
 static t_unread_buff	*new_buf(void)
 {
@@ -34,13 +35,15 @@ static t_unread_buff	*new_buf(void)
 	return (buffer);
 }
 
-static char	*concat_and_free(t_list **l, int total_len)
+static char	*concat_and_free(t_list **l, unsigned int total_len)
 {
 	char	*c;
 	size_t	i;
 	
 	i = 0;
-	c = (char *)malloc(total_len + 1);
+	c = 0;
+	if (total_len + 1)
+		c = (char *)malloc(total_len + 1);
 	if (!c)
 	{
 		ft_lstdel(l, &del_simple);
@@ -64,13 +67,13 @@ static char	*concat_and_free(t_list **l, int total_len)
 **
 **		position can become > bytes_in_buff
 *****************************************************************************/
-static int	try_buffer(t_unread_buff *buff, t_list **l)
+static size_t	try_buffer(t_unread_buff *buff, t_list **l)
 {
-	int	len;
+	size_t	len;
 
 	len = 0;
 	buff->nl_found = 0;
-	while (buff->pos + len < buff->nbytes)
+	while ((size_t)buff->pos + len < (size_t)buff->nbytes)
 	{
 		if (buff->data[buff->pos + len] == '\n')
 		{
@@ -91,12 +94,20 @@ static int	try_buffer(t_unread_buff *buff, t_list **l)
 *****************************************************************************/
 static int	seek_nl(t_unread_buff *buff, int fd, t_list **l)
 {
-	int	total_len;
+	size_t	total_len;
+	size_t	prev_total_len;
 
 	total_len = 0;
 	while (!buff->eof)
 	{
+		prev_total_len = total_len;
 		total_len += try_buffer(buff, l);
+		if (prev_total_len > total_len)
+		{
+			ft_lstdel(l, &del_simple);
+			errno =  EOVERFLOW;
+			return (0);
+		}
 		if (buff->pos >= buff->nbytes && !buff->nl_found)
 		{
 			buff->nbytes = read(fd, buff->data, BUFF_SIZE);
@@ -132,7 +143,7 @@ static int	seek_nl(t_unread_buff *buff, int fd, t_list **l)
 int						get_next_line(const int fd, char **line)
 {
 	static t_unread_buff	*bufs[MAX_OPEN_FILES + 3];
-	int						len;
+	unsigned int			len;
 	t_list					*l;
 	
 	errno = 0;
@@ -142,7 +153,7 @@ int						get_next_line(const int fd, char **line)
 	if (!bufs[fd])
 		return (-1);
 	bufs[fd]->eof = 0;
-	len = seek_nl(bufs[fd], fd, &l);
+	len = (unsigned int)seek_nl(bufs[fd], fd, &l);
 	*line = concat_and_free(&l, len);
 	if (errno || bufs[fd]->eof == 1)
 	{
