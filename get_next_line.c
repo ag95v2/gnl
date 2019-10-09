@@ -6,7 +6,7 @@
 /*   By: bgian <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 20:20:24 by bgian             #+#    #+#             */
-/*   Updated: 2019/10/01 01:27:56 by bgian            ###   ########.fr       */
+/*   Updated: 2019/10/09 16:03:53 by bgian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,12 +112,16 @@ static int	seek_nl(t_unread_buff *buff, int fd, t_list **l)
 		{
 			buff->nbytes = read(fd, buff->data, BUFF_SIZE);
 			buff->pos = 0;
-			if (buff->nbytes == 0)
-				buff->eof = 1;
 			if (buff->nbytes == -1)
 			{
 				ft_lstdel(l, &del_simple);
 				return (0);
+			}
+			if (buff->nbytes == 0)
+			{
+				if (total_len == 0)
+					buff->eof = 1;
+				break;
 			}
 			continue;
 		}
