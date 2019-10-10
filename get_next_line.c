@@ -6,7 +6,7 @@
 /*   By: bgian <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 20:20:24 by bgian             #+#    #+#             */
-/*   Updated: 2019/10/09 18:52:15 by bgian            ###   ########.fr       */
+/*   Updated: 2019/10/10 02:57:57 by bgian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,9 +142,14 @@ int						get_next_line(const int fd, char **line)
 	static t_unread_buff	*bufs[MAX_OPEN_FILES + 3];
 	unsigned int			len;
 	t_list					*l;
+	int						*i;
 
+	i = __error();
+	*i = 1;
 	errno = 0;
 	l = NULL;
+	if (fd < 0 || fd > MAX_OPEN_FILES || !line)
+		return (-1);
 	if (!bufs[fd])
 		bufs[fd] = new_buf();
 	if (!bufs[fd])

@@ -26,10 +26,9 @@ all:
 	gcc -g  -o test_long_string test_long_string.o get_next_line.o -I libft/includes -L libft/ -lft
 
 	@echo "Compiling test with bad fd"
-	gcc -g bad_fd.c -o bad_fd -I libft/includes/ -L libft/ -lft
+	gcc -g bad_fd.c -o bad_fd -I libft/includes/ -L libft/ -lft -DBUFFSIZE=7
 	
-
-
+test: all
 	@echo "\n\nOk. Runnning tests"
 	@echo "Test 0. 0 if success (Single line without end-of-line char)" 
 	@valgrind  ./test_gnl0 100 > output0.txt 
@@ -37,11 +36,9 @@ all:
 	@echo "1" > input00.txt
 	@diff input00.txt output0.txt | wc -l
 
-	@echo "\n\nOk. Runnning tests"
 	@echo "Test 1. 0 if success (Just random lines)" 
 	@valgrind  ./test_gnl 100 > output.txt 
 	@diff input.txt output.txt | wc -l
-
 
 	@echo "\n\nTest 2. 0 if success (Many identical small lines)" 
 	@valgrind  ./test_gnl_many_lines > output1.txt 
