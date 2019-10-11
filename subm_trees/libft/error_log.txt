@@ -1,0 +1,1012 @@
+ft_lstdelone.c: In function ‘ft_lstappend’:
+ft_lstdelone.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_lstdelone.c:20:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_lstdelone.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_lstdelone.c:20:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_memmove.c: In function ‘ft_lstappend’:
+ft_memmove.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_memmove.c:24:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_memmove.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_memmove.c:24:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_strjoin.c: In function ‘ft_lstappend’:
+ft_strjoin.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_strjoin.c:32:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_strjoin.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_strjoin.c:32:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_strnstr.c: In function ‘ft_lstappend’:
+ft_strnstr.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_strnstr.c:22:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_strnstr.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_strnstr.c:22:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_bzero.c: In function ‘ft_lstappend’:
+ft_bzero.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_bzero.c:19:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_bzero.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_bzero.c:19:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_lstiter.c: In function ‘ft_lstappend’:
+ft_lstiter.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_lstiter.c:22:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_lstiter.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_lstiter.c:22:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_memset.c: In function ‘ft_lstappend’:
+ft_memset.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_memset.c:23:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_memset.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_memset.c:23:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_strchr.c: In function ‘ft_lstappend’:
+ft_strchr.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_strchr.c:20:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_strchr.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_strchr.c:20:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_strlcat.c: In function ‘ft_lstappend’:
+ft_strlcat.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_strlcat.c:32:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_strlcat.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_strlcat.c:32:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_strrchr.c: In function ‘ft_lstappend’:
+ft_strrchr.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_strrchr.c:27:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_strrchr.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_strrchr.c:27:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_isalnum.c: In function ‘ft_lstappend’:
+ft_isalnum.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_isalnum.c:18:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_isalnum.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_isalnum.c:18:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_lstmap.c: In function ‘ft_lstappend’:
+ft_lstmap.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_lstmap.c:29:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_lstmap.c:39:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_lstmap.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_lstmap.c:39:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_putchar.c: In function ‘ft_lstappend’:
+ft_putchar.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_putchar.c:18:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_putchar.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_putchar.c:18:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_strlen.c: In function ‘ft_lstappend’:
+ft_strlen.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_strlen.c:23:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_strlen.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_strlen.c:23:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_strsplit.c: In function ‘ft_lstappend’:
+ft_strsplit.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_strsplit.c:30:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_strsplit.c:37:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_strsplit.c:50:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_strsplit.c:57:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_strsplit.c:82:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_strsplit.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_strsplit.c:82:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_lstnew.c: In function ‘ft_lstappend’:
+ft_lstnew.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_lstnew.c:26:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_lstnew.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_lstnew.c:26:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_putchar_fd.c: In function ‘ft_lstappend’:
+ft_putchar_fd.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_putchar_fd.c:18:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_putchar_fd.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_putchar_fd.c:18:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_strcmp.c: In function ‘ft_lstappend’:
+ft_strcmp.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_strcmp.c:23:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_strcmp.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_strcmp.c:23:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_strmap.c: In function ‘ft_lstappend’:
+ft_strmap.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_strmap.c:30:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_strmap.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_strmap.c:30:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_strstr.c: In function ‘ft_lstappend’:
+ft_strstr.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_strstr.c:22:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_strstr.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_strstr.c:22:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_memalloc.c: In function ‘ft_lstappend’:
+ft_memalloc.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_memalloc.c:24:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_memalloc.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_memalloc.c:24:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_putendl.c: In function ‘ft_lstappend’:
+ft_putendl.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_putendl.c:19:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_putendl.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_putendl.c:19:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_strcpy.c: In function ‘ft_lstappend’:
+ft_strcpy.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_strcpy.c:24:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_strcpy.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_strcpy.c:24:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_strmapi.c: In function ‘ft_lstappend’:
+ft_strmapi.c:17:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_strmapi.c:31:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_strmapi.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_strmapi.c:31:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_strsub.c: In function ‘ft_lstappend’:
+ft_strsub.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_strsub.c:31:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_strsub.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_strsub.c:31:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_putendl_fd.c: In function ‘ft_lstappend’:
+ft_putendl_fd.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_putendl_fd.c:19:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_putendl_fd.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_putendl_fd.c:19:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_strdel.c: In function ‘ft_lstappend’:
+ft_strdel.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_strdel.c:23:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_strdel.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_strdel.c:23:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_strncat.c: In function ‘ft_lstappend’:
+ft_strncat.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_strncat.c:31:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_strncat.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_strncat.c:31:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_strtrim.c: In function ‘ft_lstappend’:
+ft_strtrim.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_strtrim.c:23:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_strtrim.c:34:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_strtrim.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_strtrim.c:34:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_memchr.c: In function ‘ft_lstappend’:
+ft_memchr.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_memchr.c:25:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_memchr.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_memchr.c:25:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_putnbr.c: In function ‘ft_lstappend’:
+ft_putnbr.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_putnbr.c:33:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_putnbr.c:38:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_putnbr.c:58:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_putnbr.c:67:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_putnbr.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_putnbr.c:67:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_strdup.c: In function ‘ft_lstappend’:
+ft_strdup.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_strdup.c:26:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_strdup.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_strdup.c:26:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_strncmp.c: In function ‘ft_lstappend’:
+ft_strncmp.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_strncmp.c:25:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_strncmp.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_strncmp.c:25:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_itoa.c: In function ‘ft_lstappend’:
+ft_itoa.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_itoa.c:33:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_itoa.c:38:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_itoa.c:60:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_itoa.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_itoa.c:60:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_memcmp.c: In function ‘ft_lstappend’:
+ft_memcmp.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_memcmp.c:22:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_memcmp.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_memcmp.c:22:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_putnbr_fd.c: In function ‘ft_lstappend’:
+ft_putnbr_fd.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_putnbr_fd.c:33:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_putnbr_fd.c:38:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_putnbr_fd.c:58:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_putnbr_fd.c:67:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_putnbr_fd.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_putnbr_fd.c:67:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_strequ.c: In function ‘ft_lstappend’:
+ft_strequ.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_strequ.c:18:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_strequ.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_strequ.c:18:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_strncpy.c: In function ‘ft_lstappend’:
+ft_strncpy.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_strncpy.c:28:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_strncpy.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_strncpy.c:28:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_lstadd.c: In function ‘ft_lstappend’:
+ft_lstadd.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_lstadd.c:19:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_lstadd.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_lstadd.c:19:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_memcpy.c: In function ‘ft_lstappend’:
+ft_memcpy.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_memcpy.c:20:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_memcpy.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_memcpy.c:20:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_putstr.c: In function ‘ft_lstappend’:
+ft_putstr.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_putstr.c:21:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_putstr.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_putstr.c:21:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_strnequ.c: In function ‘ft_lstappend’:
+ft_strnequ.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_strnequ.c:18:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_strnequ.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_strnequ.c:18:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_lstdel.c: In function ‘ft_lstappend’:
+ft_lstdel.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_lstdel.c:25:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_lstdel.c:32:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_lstdel.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_lstdel.c:32:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_memdel.c: In function ‘ft_lstappend’:
+ft_memdel.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_memdel.c:19:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_memdel.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_memdel.c:19:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_putstr_fd.c: In function ‘ft_lstappend’:
+ft_putstr_fd.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_putstr_fd.c:19:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_putstr_fd.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_putstr_fd.c:19:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+ft_strnew.c: In function ‘ft_lstappend’:
+ft_strnew.c:16:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ {
+ ^
+ft_strnew.c:18:1: error: expected ‘{’ at end of input
+ }
+ ^
+In file included from ft_strnew.c:13:0:
+libft.h:96:33: error: unused parameter ‘lst’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                 ^
+libft.h:96:50: error: unused parameter ‘content’ [-Werror=unused-parameter]
+ t_list    *ft_lstappend(t_list *lst, void const *content,\
+                                                  ^
+libft.h:97:10: error: unused parameter ‘content_size’ [-Werror=unused-parameter]
+   size_t content_size)
+          ^
+ft_strnew.c:18:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+make: *** [libft.a] Ошибка 1
