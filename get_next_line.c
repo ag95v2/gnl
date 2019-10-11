@@ -70,11 +70,11 @@ static char				*concat_and_free(t_list **l, unsigned int total_len)
 
 static size_t			try_buffer(t_unread_buff *buff, t_list **l)
 {
-	size_t	len;
+	int	len;
 
 	len = 0;
 	buff->nl_found = 0;
-	while ((size_t)buff->pos + len < (size_t)buff->nbytes)
+	while (buff->pos + len < buff->nbytes)
 	{
 		if (buff->data[buff->pos + len] == '\n')
 		{
@@ -85,7 +85,7 @@ static size_t			try_buffer(t_unread_buff *buff, t_list **l)
 	}
 	*l = ft_lstappend(*l, ft_memdup(buff->data + buff->pos, len), len);
 	buff->pos += len + 1;
-	return (len);
+	return ((size_t)len);
 }
 
 /*
@@ -142,14 +142,11 @@ int						get_next_line(const int fd, char **line)
 	static t_unread_buff	*bufs[MAX_OPEN_FILES + 3];
 	unsigned int			len;
 	t_list					*l;
-	int						*i;
 
-	i = __error();
-	*i = 1;
-	errno = 0;
-	l = NULL;
 	if (fd < 0 || fd > MAX_OPEN_FILES || !line)
 		return (-1);
+	errno = 0;
+	l = NULL;
 	if (!bufs[fd])
 		bufs[fd] = new_buf();
 	if (!bufs[fd])

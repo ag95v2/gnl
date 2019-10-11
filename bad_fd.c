@@ -1,5 +1,5 @@
 
-#include "get_next_line.c"
+#include "get_next_line.h"
 
 #include <stdio.h>
 #include <unistd.h>
@@ -61,9 +61,17 @@ static void simple_string()
 	//mt_assert(strcmp(line_fd2, "www") == 0);
 
 	get_next_line(p_fd3[0], &line_fd3);
-	printf("Expected:\n888\n got:\n%s\n", line_fd3);
+	printf("Expected:\n888\ngot:\n%s\n", line_fd3);
 	printf("Strcmp returned %d\n", ft_strcmp(line_fd3, "888"));
 
+	if (line_fd0)
+		free(line_fd0);
+	if (line_fd1)
+		free(line_fd1);
+	if (line_fd2)
+		free(line_fd2);
+	if (line_fd3)
+		free(line_fd3);
 
 	get_next_line(p_fd0[0], &line_fd0);
 	//mt_assert(strcmp(line_fd0, "bbb") == 0);
@@ -76,6 +84,14 @@ static void simple_string()
 
 	get_next_line(p_fd3[0], &line_fd3);
 	//mt_assert(strcmp(line_fd3, "999") == 0);
+	if (line_fd0)
+		free(line_fd0);
+	if (line_fd1)
+		free(line_fd1);
+	if (line_fd2)
+		free(line_fd2);
+	if (line_fd3)
+		free(line_fd3);
 }
 
 int main()
@@ -94,13 +110,6 @@ int main()
 	else
 		printf("Failed test from moulinette! Be careful!\n");
 	simple_string();
-	//close(1);
-	//close(2);
-	//fd = open("bad_fd_output.txt", O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
-	//ft_putstr_fd(ft_itoa(fd), fd);
-
-	//res = read(2, c, 5);
-	//printf("Read from stderr, result: %d\n", res);
 	
 	return (0);
 }

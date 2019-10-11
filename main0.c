@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 	{
 		if ((ret = get_next_line(fd, &s)) > 0)
 		{
-			printf("%s\n", s);
+			printf("%s", s);
 			free(s);
 		}
 	}

@@ -20,7 +20,7 @@
 # define MAX_OPEN_FILES 1024
 
 # ifndef BUFF_SIZE
-#  define BUFF_SIZE 1000000
+#  define BUFF_SIZE 1000000 
 # endif
 
 typedef struct	s_unread_buff

@@ -1,0 +1,9 @@
+FD: 3
+FD: 3
+Gnl returned: 1
+Expected: Hello
+Got: Hello
+Reading after EOF. Gnl returned: 0
+Gnl returned: 1
+Expected: Surprize, bitch!
+Got: Surprize, bitch!
