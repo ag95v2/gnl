@@ -1,4 +1,8 @@
 
+valgr_flags="2> log  && cat log | grep lost"
+valgr_flags="--leak-check=full"
+
+
 all:
 
 	@echo "Compiling libft"
@@ -47,30 +51,30 @@ all:
 test: all
 	@echo "\n\nOk. Runnning tests"
 	@echo "Test 0. 0 if success (Single line without end-of-line char)" 
-	@valgrind  ./test_gnl0 100 > output0.txt 2> log  && cat log | grep lost 
+	@valgrind  ./test_gnl0 100 > output0.txt $(valgr_flags) 
 	@diff input0.txt output0.txt | wc -l
 
 	@echo "Test 1. 0 if success (Just random lines)" 
-	@valgrind  ./test_gnl 100 > output.txt  2> log  && cat log | grep lost
+	@valgrind  ./test_gnl 100 > output.txt  $(valgr_flags)
 	@diff input.txt output.txt | wc -l
 
 	@echo "\n\nTest 4. Bad file descriptor. Expected error message and no memory leaks"
-	valgrind  --leak-check=full ./bad_fd 2> log  && cat log | grep lost
+	valgrind  --leak-check=full ./bad_fd $(valgr_flags)
 
 	@echo "\n\nTest 5. Appending to file after EOF"
-	valgrind  --leak-check=full ./close_append 2> log  && cat log | grep lost
+	valgrind  --leak-check=full ./close_append $(valgr_flags)
 
 	@echo "\n\nTest 6. Multiple files"
-	valgrind  --leak-check=full ./multiple_files 2> log  && cat log | grep lost
+	valgrind  --leak-check=full ./multiple_files $(valgr_flags)
 
 
 	@echo "\n\nTest 7. Multiple files with bad fds"
-	valgrind  --leak-check=full ./multiple_files2 2> log  && cat log | grep lost
+	valgrind  --leak-check=full ./multiple_files2 $(valgr_flags)
 
 big_test:test
 	@echo "\n\nTest 2. 0 if success (Many identical small lines)" 
-	@valgrind  ./test_gnl_many_lines > output1.txt  2> log  && cat log | grep lost
+	@valgrind  ./test_gnl_many_lines > output1.txt  $(valgr_flags)
 	@diff input1.txt output1.txt | wc -l
 
 	@echo "\n\nTest 3. Very long string 1 0 on success and no valgrind  .roblems"
-	@ ./cat_long_string | valgrind  ./test_long_string 2> log  && cat log | grep lost	
+	@ ./cat_long_string | valgrind  ./test_long_string $(valgr_flags)	
